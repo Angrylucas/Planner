@@ -23,7 +23,7 @@ create table if not exists public.profiles (
 
 create table if not exists public.trips (
   id              uuid primary key default gen_random_uuid(),
-  owner_id        uuid not null references auth.users(id) on delete cascade,
+  owner_id        uuid not null default auth.uid() references auth.users(id) on delete cascade,
   title           text not null,
   description     text,
   destination     text,

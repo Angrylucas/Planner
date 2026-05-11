@@ -153,7 +153,6 @@ function NewTripModal({ onClose, onCreated }: { onClose: () => void; onCreated: 
         destination: destination || null,
         start_date: startDate || null,
         end_date: endDate || null,
-        owner_id: user.id,
       })
       .select()
       .single()
